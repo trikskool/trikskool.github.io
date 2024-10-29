@@ -1,0 +1,1 @@
+# trikskool.github.io
