@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>C645h53cu61y</title>
+</head>
+<body>
+<h1>Warning! If you are not admin in Trikskool DO NOT i repeat DO NOT click C645h53cu61y again DO NOT.</h1>
+<button id="toggleButton">C645h53cu61y</button>
+
+<script>
+let loopRunning = false;
+let intervalId;
+
+const toggleButton = document.getElementById('toggleButton');
+
+function loopFunction() {
+  fetch('url_of_the_website', {
+  method: 'GET', // or 'POST', 'PUT', 'DELETE', etc.
+  headers: {
+    'Content-Type': 'application/json',
+    // Add other headers as needed
+  },
+  body: JSON.stringify({
+    // Add request body for POST/PUT requests
+    key: 'value',
+  }),
+})
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json(); // or response.text(), response.blob(), etc.
+  })
+  .then(data => {
+    console.log('Success:', data);
+    // Handle the response data
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    // Handle errors
+  });
+
+}
+
+toggleButton.addEventListener('click', function() {
+  if (loopRunning) {
+    clearInterval(intervalId);
+    loopRunning = false;
+    toggleButton.textContent = 'Start Loop';
+  } else {
+    intervalId = setInterval(loopFunction, 1);
+    loopRunning = true;
+    toggleButton.textContent = 'Stop Loop';
+  }
+});
+</script>
+
+</body>
+</html>
